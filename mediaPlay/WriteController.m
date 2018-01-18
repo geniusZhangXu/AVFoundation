@@ -12,30 +12,29 @@
     总结一下它的整个流程：
     1、
     首先需要一个视频流的输入类：
-    AVCaptureDevice  设备捕获类，根据AVMediaType
+    AVCaptureDevice  设备捕获类，根据 AVMediaType
     AVCaptureDeviceInput  设备输入类  根据初始化的AVCaptureDevice初始化AVCaptureDeviceInput
     音频也是和上面一样
     创建 AVCaptureVideoPreviewLayer 用来预览录制的视频画面
  
-    2、
-    初始化需要的线程队列
+    2、初始化需要的线程队列
  
     3、
-    初始化AVCaptureSession 捕捉会话
+    初始化AVCaptureSession录制会话
     再根据你上面初始化的 线程队列和AVCaptureSession 初始化 AVCaptureVideoDataOutput 和 AVCaptureAudioDataOutput 
-    再根据你初始化的 AVCaptureSession得到AVCaptureConnection
+    再根据你初始化的AVCaptureSession得到AVCaptureConnection
  
     4、
     初始化AVAssetWrite
-    再给AVSssetWrite 通过addInput添加AVAssetWriterInput,AVAssetWriterInput也是根据AVMediaType分为video和audio
+    再给AVSssetWrite通过addInput添加AVAssetWriterInput,AVAssetWriterInput也是根据AVMediaType分为video和audio
  
     5、
     通过 AVCaptureSession startRunning 开始采集数据
-    通过 AVAssetWriter startWriting 开始写入数据
-    通过AVCaptureVideoDataOutputSampleBufferDelegate和AVCaptureAudioDataOutputSampleBufferDelegate 代理方法拿到视频和音频的数据流
+    通过 AVAssetWriter    startWriting 开始写入数据
+    通过AVCaptureVideoDataOutputSampleBufferDelegate和AVCaptureAudioDataOutputSampleBufferDelegate代理方法拿到视频和音频的数据流
  
    
-    1. 创建捕捉会话
+    1. 创建录制会话
     2. 设置视频的输入 和 输出
     3. 设置音频的输入 和 输出
     4. 添加视频预览层

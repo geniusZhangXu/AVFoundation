@@ -49,7 +49,7 @@
     [self.avPlayerItem  addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
     
     __weak typeof (self) WSELF = self;
-    // 可用于更新播放的进度条
+    // 可用于更新播放的进度条     Periodic 周期
     [WSELF.avPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 10) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         
           // CMTimeMake(1, 10) 十分之一秒

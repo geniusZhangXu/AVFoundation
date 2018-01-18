@@ -6,6 +6,127 @@
 //  Copyright © 2017年 CAOMEI. All rights reserved.
 //
 
+/*!
+@protocol AVCaptureFileOutputRecordingDelegate <NSObject>
+
+@optional
+
+
+ @method captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:
+ @abstract
+ 开始往file里面写数据
+ Informs the delegate when the output has started writing to a file.
+ 
+ @param captureOutput
+ The capture file output that started writing the file.
+ @param fileURL
+ The file URL of the file that is being written.
+ @param connections
+ An array of AVCaptureConnection objects attached to the file output that provided the data that is being written to the file.
+ 
+ @discussion
+ 方法在给输出文件当中写数据的时候开始调用 如果在开始写数据的时候有错误  方法就不会被调用  但 captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error: and captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:
+ 这两个方法总是会被调用，即使没有数据写入
+ 
+ This method is called when the file output has started writing data to a file. If an error condition prevents any data from being written, this method may not be called. captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error: and captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: will always be called, even if no data is written.
+ Clients 顾客；客户端；委托方   specific特殊  efficient 有效的
+ Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
+方法:
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections;
+
+ 
+ @method captureOutput:didPauseRecordingToOutputFileAtURL:fromConnections:
+ @abstract 摘要
+ 
+ 没当客户端成功的暂停了录制时候这个方法就会被调用
+ Called whenever the output is recording to a file and successfully pauses the recording at the request of the client.
+ 
+ @param captureOutput
+ The capture file output that has paused its file recording.
+ @param fileURL
+ The file URL of the file that is being written.
+ @param connections
+ attached 附加   provided 提供
+ An array of AVCaptureConnection objects attached to the file output that provided the data that is being written to the file.
+ 
+ @discussion  下面的谈论告诉我们你要是调用了stop方法，这个代理方法是不会被调用的
+ Delegates can use this method to be informed when a request to pause recording is actually respected. It is safe for delegates to change what the file output is currently doing (starting a new file, for example) from within this method. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed to be called, even if a previous call to pauseRecording was made.
+ 
+ Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didPauseRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections NS_AVAILABLE(10_7, NA);
+
+
+ @method captureOutput:didResumeRecordingToOutputFileAtURL:fromConnections:
+ @abstract 这个摘要告诉我们的是这个方法在你暂停完之后成功的回复了录制就会进这个代理方法
+ Called whenever the output, at the request of the client, successfully resumes a file recording that was paused.
+ 
+ @param captureOutput
+ The capture file output that has resumed(重新开始) its paused file recording.
+ @param fileURL
+ The file URL of the file that is being written.
+ @param connections
+ An array of AVCaptureConnection objects attached to the file output that provided the data that is being written to the file.
+ 
+ @discussion
+ Delegates can use this method to be informed（通知） when a request to resume recording is actually respected. It is safe for delegates to change what the file output is currently doing (starting a new file, for example) from within this method. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed（确保、有保证） to be called, even if a previous call to resumeRecording was made.
+ 
+ Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didResumeRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections NS_AVAILABLE(10_7, NA);
+
+
+ @method captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error:
+ @abstract  这个方法在录制即将要结束的时候就会被调用
+ Informs the delegate when the output will stop writing new samples to a file.
+ 
+ @param captureOutput
+ The capture file output that will finish writing the file.
+ @param fileURL
+ The file URL of the file that is being written.
+ @param connections
+ An array of AVCaptureConnection objects attached to the file output that provided the data that is being written to the file.
+ @param error
+ An error describing what caused the file to stop recording, or nil if there was no error.
+ 
+ @discussion
+ This method is called when the file output will stop recording new samples to the file at outputFileURL, either because startRecordingToOutputFileURL:recordingDelegate: or stopRecording were called, or because an error, described by the error parameter, occurred (if no error occurred, the error parameter will be nil). This method will always be called for each recording request, even if no data is successfully written to the file.
+ 
+ Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput willFinishRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections error:(NSError *)error NS_AVAILABLE(10_7, NA);
+
+
+ 下面是必须实现的代理方法，就是录制成功结束的时候调用的方法
+ @required
+
+
+ @method captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:
+ @abstract
+ Informs the delegate when all pending data has been written to an output file.
+ 
+ @param captureOutput
+ The capture file output that has finished writing the file.
+ @param fileURL
+ The file URL of the file that has been written.
+ @param connections
+ An array of AVCaptureConnection objects attached to the file output that provided the data that was written to the file.
+ @param error
+ An error describing what caused the file to stop recording, or nil if there was no error.
+ 
+ @discussion
+ This method is called when the file output has finished writing all data to a file whose recording was stopped, either because startRecordingToOutputFileURL:recordingDelegate: or stopRecording were called, or because an error, described by the error parameter, occurred (if no error occurred, the error parameter will be nil). This method will always be called for each recording request, even if no data is successfully written to the file.
+ 
+ Clients should not assume that this method will be called on a specific thread.
+ 
+ Delegates are required to implement this method.
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error;
+ 
+@end
+ */
+
+
 #import "LittleVideoController.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -71,7 +192,7 @@
     });
     
     
-    // 初始化一个设备输出对象
+    // 初始化一个拍摄输出对象
     self.captureMovieFileOutput = ({
         
         //输出一个电影文件
@@ -104,6 +225,8 @@
              } NS_AVAILABLE_IOS(8_0) __TVOS_PROHIBITED;
              */
             connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;
+            //预览图层和视频方向保持一致
+            connection.videoOrientation = [self.captureVideoPreviewLayer connection].videoOrientation;
         }
         
         if ([self.captureSession canAddOutput:output]) {
@@ -115,7 +238,7 @@
     });
     
     /*
-     用于展示录制的画面
+     用于展示制的画面
     */
     self.captureVideoPreviewLayer = ({
         
@@ -166,7 +289,7 @@
        AVCaptureDevice 捕获设备类
        AVCaptureDeviceInput 捕获设备输入类
      */
-    AVCaptureDevice * captureDevice  = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice * captureDevice   = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput * videoInput = [AVCaptureDeviceInput deviceInputWithDevice: captureDevice error: &error];
     
     if (!videoInput) {
@@ -226,12 +349,8 @@
 #pragma mark --
 #pragma mark -- AVCaptureMovieFileOutput 录制视频
 -(void)startRecordSession{
-    
-    AVCaptureConnection *  captureConnection = [self.captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
-    
-    //预览图层和视频方向保持一致
-    captureConnection.videoOrientation = [self.captureVideoPreviewLayer connection].videoOrientation;
 
+        
     [self.captureMovieFileOutput startRecordingToOutputFileURL:({
         
         NSURL * url  = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"zhangxu.mov"]];

@@ -23,6 +23,7 @@
 		C2708CE31FD6870B007E3B61 /* mediaPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2708CE21FD6870B007E3B61 /* mediaPlayUITests.m */; };
 		C2708CF21FD688C7007E3B61 /* mediaPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2708CF11FD688C7007E3B61 /* mediaPlayController.m */; };
 		C27D92EA1FF4CB6700E6F85D /* SpaceRefView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */; };
+		C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C286BFC3200E29AE00E77433 /* AVAssetManager.m */; };
 		C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		C2708CF11FD688C7007E3B61 /* mediaPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mediaPlayController.m; sourceTree = "<group>"; };
 		C27D92E81FF4CB6700E6F85D /* SpaceRefView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceRefView.h; sourceTree = "<group>"; };
 		C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceRefView.m; sourceTree = "<group>"; };
+		C286BFC2200E29AE00E77433 /* AVAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAssetManager.h; sourceTree = "<group>"; };
+		C286BFC3200E29AE00E77433 /* AVAssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAssetManager.m; sourceTree = "<group>"; };
 		C2B8F85A1FF3A8CA000EA477 /* AVAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAudioPlayerController.h; sourceTree = "<group>"; };
 		C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAudioPlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +152,8 @@
 				C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */,
 				34EF7B171FFB845F00C06E2D /* AVAudioRecorderController.h */,
 				34EF7B181FFB845F00C06E2D /* AVAudioRecorderController.m */,
+				C286BFC2200E29AE00E77433 /* AVAssetManager.h */,
+				C286BFC3200E29AE00E77433 /* AVAssetManager.m */,
 				C2708CC31FD6870A007E3B61 /* Main.storyboard */,
 				C2708CC91FD6870B007E3B61 /* Assets.xcassets */,
 				C2708CCB1FD6870B007E3B61 /* LaunchScreen.storyboard */,
@@ -332,6 +337,7 @@
 				C2708CBF1FD6870A007E3B61 /* AppDelegate.m in Sources */,
 				C2305C511FE263F30095B2DC /* WriteController.m in Sources */,
 				C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */,
+				C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */,
 				C2708CBC1FD6870A007E3B61 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

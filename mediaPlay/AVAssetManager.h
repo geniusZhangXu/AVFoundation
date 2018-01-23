@@ -16,4 +16,6 @@
 
 -(void)getAVMetadataItemMessage;
 
+-(void)CMTimeCalculate;
+
 @end

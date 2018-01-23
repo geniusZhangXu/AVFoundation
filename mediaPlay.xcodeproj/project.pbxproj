@@ -24,6 +24,8 @@
 		C2708CF21FD688C7007E3B61 /* mediaPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2708CF11FD688C7007E3B61 /* mediaPlayController.m */; };
 		C27D92EA1FF4CB6700E6F85D /* SpaceRefView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */; };
 		C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C286BFC3200E29AE00E77433 /* AVAssetManager.m */; };
+		C2B889AC2015D5ED000BD49C /* hubblecast.m4v in Resources */ = {isa = PBXBuildFile; fileRef = C2B889AB2015D5ED000BD49C /* hubblecast.m4v */; };
+		C2B889B42015DE41000BD49C /* CMTimeReading.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B889B32015DE41000BD49C /* CMTimeReading.m */; };
 		C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,9 @@
 		C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceRefView.m; sourceTree = "<group>"; };
 		C286BFC2200E29AE00E77433 /* AVAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAssetManager.h; sourceTree = "<group>"; };
 		C286BFC3200E29AE00E77433 /* AVAssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAssetManager.m; sourceTree = "<group>"; };
+		C2B889AB2015D5ED000BD49C /* hubblecast.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = hubblecast.m4v; sourceTree = "<group>"; };
+		C2B889B22015DE41000BD49C /* CMTimeReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMTimeReading.h; sourceTree = "<group>"; };
+		C2B889B32015DE41000BD49C /* CMTimeReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeReading.m; sourceTree = "<group>"; };
 		C2B8F85A1FF3A8CA000EA477 /* AVAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAudioPlayerController.h; sourceTree = "<group>"; };
 		C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAudioPlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,31 +143,27 @@
 		C2708CB91FD6870A007E3B61 /* mediaPlay */ = {
 			isa = PBXGroup;
 			children = (
+				C2B889B12015DDF1000BD49C /* AVAsset */,
+				C2B889B02015DDE0000BD49C /* AudioRecoder */,
+				C2B889AF2015DD64000BD49C /* AudioPlayer */,
+				C2B889AE2015DD53000BD49C /* VideoRecoder */,
+				C2B889AD2015DD28000BD49C /* VideoPlayer */,
 				C2708CBD1FD6870A007E3B61 /* AppDelegate.h */,
 				C2708CBE1FD6870A007E3B61 /* AppDelegate.m */,
 				C2708CC01FD6870A007E3B61 /* ViewController.h */,
 				C2708CC11FD6870A007E3B61 /* ViewController.m */,
-				C2708CF01FD688C7007E3B61 /* mediaPlayController.h */,
-				C2708CF11FD688C7007E3B61 /* mediaPlayController.m */,
-				34ED4D6F1FDF709400756984 /* LittleVideoController.h */,
-				34ED4D6E1FDF709400756984 /* LittleVideoController.m */,
-				C2305C4F1FE263F30095B2DC /* WriteController.h */,
-				C2305C501FE263F30095B2DC /* WriteController.m */,
-				C2B8F85A1FF3A8CA000EA477 /* AVAudioPlayerController.h */,
-				C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */,
-				34EF7B171FFB845F00C06E2D /* AVAudioRecorderController.h */,
-				34EF7B181FFB845F00C06E2D /* AVAudioRecorderController.m */,
-				C286BFC2200E29AE00E77433 /* AVAssetManager.h */,
-				C286BFC3200E29AE00E77433 /* AVAssetManager.m */,
 				C2708CC31FD6870A007E3B61 /* Main.storyboard */,
 				C2708CC91FD6870B007E3B61 /* Assets.xcassets */,
 				C2708CCB1FD6870B007E3B61 /* LaunchScreen.storyboard */,
 				C2708CCE1FD6870B007E3B61 /* Info.plist */,
 				C2708CC61FD6870B007E3B61 /* mediaPlay.xcdatamodeld */,
 				34EF7B151FFB381400C06E2D /* 薛之谦-像风一样.mp3 */,
+				C2B889AB2015D5ED000BD49C /* hubblecast.m4v */,
 				C2708CBA1FD6870A007E3B61 /* Supporting Files */,
 				C27D92E81FF4CB6700E6F85D /* SpaceRefView.h */,
 				C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */,
+				C2B889B22015DE41000BD49C /* CMTimeReading.h */,
+				C2B889B32015DE41000BD49C /* CMTimeReading.m */,
 			);
 			path = mediaPlay;
 			sourceTree = "<group>";
@@ -191,6 +192,53 @@
 				C2708CE41FD6870B007E3B61 /* Info.plist */,
 			);
 			path = mediaPlayUITests;
+			sourceTree = "<group>";
+		};
+		C2B889AD2015DD28000BD49C /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C2708CF01FD688C7007E3B61 /* mediaPlayController.h */,
+				C2708CF11FD688C7007E3B61 /* mediaPlayController.m */,
+			);
+			name = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		C2B889AE2015DD53000BD49C /* VideoRecoder */ = {
+			isa = PBXGroup;
+			children = (
+				34ED4D6F1FDF709400756984 /* LittleVideoController.h */,
+				34ED4D6E1FDF709400756984 /* LittleVideoController.m */,
+				C2305C4F1FE263F30095B2DC /* WriteController.h */,
+				C2305C501FE263F30095B2DC /* WriteController.m */,
+			);
+			name = VideoRecoder;
+			sourceTree = "<group>";
+		};
+		C2B889AF2015DD64000BD49C /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C2B8F85A1FF3A8CA000EA477 /* AVAudioPlayerController.h */,
+				C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */,
+			);
+			name = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		C2B889B02015DDE0000BD49C /* AudioRecoder */ = {
+			isa = PBXGroup;
+			children = (
+				34EF7B171FFB845F00C06E2D /* AVAudioRecorderController.h */,
+				34EF7B181FFB845F00C06E2D /* AVAudioRecorderController.m */,
+			);
+			name = AudioRecoder;
+			sourceTree = "<group>";
+		};
+		C2B889B12015DDF1000BD49C /* AVAsset */ = {
+			isa = PBXGroup;
+			children = (
+				C286BFC2200E29AE00E77433 /* AVAssetManager.h */,
+				C286BFC3200E29AE00E77433 /* AVAssetManager.m */,
+			);
+			name = AVAsset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2708CCD1FD6870B007E3B61 /* LaunchScreen.storyboard in Resources */,
+				C2B889AC2015D5ED000BD49C /* hubblecast.m4v in Resources */,
 				C2708CCA1FD6870B007E3B61 /* Assets.xcassets in Resources */,
 				C2708CC51FD6870A007E3B61 /* Main.storyboard in Resources */,
 				34EF7B161FFB381400C06E2D /* 薛之谦-像风一样.mp3 in Resources */,
@@ -335,6 +384,7 @@
 				C2708CF21FD688C7007E3B61 /* mediaPlayController.m in Sources */,
 				C27D92EA1FF4CB6700E6F85D /* SpaceRefView.m in Sources */,
 				C2708CBF1FD6870A007E3B61 /* AppDelegate.m in Sources */,
+				C2B889B42015DE41000BD49C /* CMTimeReading.m in Sources */,
 				C2305C511FE263F30095B2DC /* WriteController.m in Sources */,
 				C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */,
 				C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */,

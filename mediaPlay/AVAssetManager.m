@@ -8,9 +8,11 @@
 
 #import "AVAssetManager.h"
 
+#define YOUTUBE_URL @"http://www.youtube.com/watch?v=6dNryy5elc8"
+
 @implementation AVAssetManager
 
-- (instancetype)init
+-(instancetype)init
 {
         self = [super init];
         if (self) {
@@ -58,14 +60,11 @@
         }];
 }
 
-
-
 -(void)getAVMetadataItemMessage{
         
         
-        NSString * path = [[NSBundle mainBundle]pathForResource:@"薛之谦-像风一样.mp3" ofType:nil];
-        NSURL * url = [NSURL fileURLWithPath:path];
-        
+        NSURL * url= [[NSBundle mainBundle]URLForResource:@"hubblecast" withExtension:@"m4v"];
+//        NSURL * url = [NSURL URLWithString:YOUTUBE_URL];
         AVAsset * asset = [AVAsset assetWithURL:url];
         NSArray * keys  = @[@"availableMetadataFormats"];
         NSMutableArray * metaArray =[NSMutableArray array];
@@ -133,15 +132,75 @@
                        TRSO： Intenet电台所有者
                        UFID： 唯一的文件标识符
                        TSRC： ISRC（国际的标准记录代码）
-                     
                      */
                         
                     NSLog(@"%@ : %@",item.key,item.value);
                 }
                 
         }];
+        
+        
+        // 字母的处理
+        // AVMediaSelectionGroup
+        // AVMediaSelectionOption
+        /*
+          availableMediaCharacteristicsWithMediaSelectionOptions 这个Asset的属性会返回一个字符串数组
+          这些字符串用于表示保存在资源中的可用选项的媒体特性
+         
+          请求到上面的媒体特性之后，需要调用Asset的mediaSelectionGroupForMediaCharacteristic:(媒体特性)
+          得到一个包含AVMediaSelectionOption的容器AVMediaSelectionGroup
+         
+          遍历这个容器的option属性，你就能得到AVMediaSelectionOption对象
+         
+         */
+        
+        NSArray * array = asset.availableMediaCharacteristicsWithMediaSelectionOptions;
+        for (NSString * string in array) {
+                
+                AVMediaSelectionGroup * group = [asset mediaSelectionGroupForMediaCharacteristic:string];
+                NSLog(@"[%@]",string);
+                
+                for (AVMediaSelectionOption * option in group.options) {
+                        
+                        NSLog(@"Option = %@",option.displayName);
+                }
+        }
 }
 
+
+-(void)CMTimeCalculate{
+        
+        
+        CMTime timeO = CMTimeMake(1,10);
+        CMTime timeT = CMTimeMake(1,5);
+        
+        // 加
+        CMTime timeA = CMTimeAdd(timeO,timeT);
+        CMTimeShow(timeA);
+        
+        //减
+        CMTime timeS = CMTimeSubtract(timeO,timeT);
+        CMTimeShow(timeS);
+        
+        //乘 整形
+        CMTime timeB = CMTimeMake(1,10);
+        CMTime timeI = CMTimeMultiply(timeB,5);
+        CMTimeShow(timeI);
+        
+        //乘 浮点型
+        CMTime timeF = CMTimeMultiplyByFloat64(timeB,5.6);
+        CMTimeShow(timeF);
+        
+        // 比较  1是大于  0是相等  -1是小于
+        int timeC = CMTimeCompare(timeO,timeT);
+        NSLog(@"比较得到大的是%d",timeC); // -1
+        
+        //求绝对值
+        CMTime timeAB = CMTimeAbsoluteValue(timeS);
+        CMTimeShow(timeAB);
+        
+        
+}
 
 
 @end

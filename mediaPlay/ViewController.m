@@ -47,6 +47,15 @@
         [self.AVAssetButton addTarget:self action:@selector(assetButtonClick) forControlEvents:UIControlEventTouchUpInside];
         
         
+        //AVMediaSelectionGroup
+        
+        
+        // 表示AVAsset中的备用媒体呈现方式，一个资源可能包含备用媒体呈现方式，比如音频、视频、或者文本轨道
+        //
+        
+        //AVMediaSelectionOption
+        
+        //AVAssetImageGenerator
 }
 
 #pragma mark --
@@ -54,8 +63,11 @@
 -(void)assetButtonClick{
         
         // AVAsynchronousKeyValueLoading 协议理解
-        [[[AVAssetManager alloc]init]  getAssetMessage];
-        [[[AVAssetManager alloc]init]  getAVMetadataItemMessage];
+        AVAssetManager * assetManager  =  [[AVAssetManager alloc]init];
+        [assetManager getAssetMessage];
+        [assetManager getAVMetadataItemMessage];
+        [assetManager CMTimeCalculate];
+        
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

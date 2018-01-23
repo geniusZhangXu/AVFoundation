@@ -11,7 +11,6 @@
 
 @optional
 
-
  @method captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:
  @abstract
  开始往file里面写数据
@@ -479,7 +478,6 @@
    上面是第一种视频录制的情况，AVCaptureSession + AVCaptureMovieFileOutput  在利用 AVAssetExportSession 压缩视频
    上面第一种方式的缺点就是视频压缩需要时间，压缩的速度比较慢，对用户的体验有一定的影响。
    还有第二种方式，利用AVCaptureSession + AVAssetWriter  这种方案
- 
  */
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

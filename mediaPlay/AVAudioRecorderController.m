@@ -272,8 +272,6 @@ audioRecorderEndInterruption: is called when the preferred method, audioRecorder
                 _destURL = destURL;
                 handler(YES, error);
                 [self.avAudioRecorder prepareToRecord];
-        
-                
         } else {
                 
                 handler(NO, error);

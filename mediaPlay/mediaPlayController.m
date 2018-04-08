@@ -15,6 +15,8 @@
 @property(nonatomic,strong) AVPlayerItem  * avPlayerItem;
 @property(nonatomic,strong) AVPlayer      * avPlayer;
 @property(nonatomic,strong) AVPlayerLayer * avPlayerLayer;
+@property(nonatomic,strong) AVPlayerViewController * controller;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *videoDuration;
 @property (weak, nonatomic) IBOutlet UILabel *videoPlayerTime;
@@ -28,7 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
+        
     self.avPlayerItem   = [AVPlayerItem playerItemWithURL:self.MovieURL];
     self.avPlayer       = [[AVPlayer alloc]initWithPlayerItem:self.avPlayerItem];
     self.avPlayerLayer  = [AVPlayerLayer playerLayerWithPlayer:self.avPlayer];
@@ -42,7 +45,7 @@
 #pragma mark --
 #pragma mark -- KVO
 -(void)addObserverWithAVPlayerItem{
-    
+        
     // 状态添加观察者
     [self.avPlayerItem  addObserver:self forKeyPath:@"status" options:(NSKeyValueObservingOptionNew) context:nil];
     // 缓存进度添加观察者
@@ -57,7 +60,6 @@
           // @field timescale The timescale of the CMTime. value/timescale = seconds.
           float currentPlayTime = (double)self.avPlayerItem.currentTime.value/ self.avPlayerItem.currentTime.timescale;
           NSLog(@"当前播放进度：%f",currentPlayTime);
-          
           WSELF.videoPlayerTime.text = [NSString stringWithFormat:@"播放进度：%f",currentPlayTime];
             
     }];
@@ -74,9 +76,7 @@
             NSLog(@"准备好播放");
             CMTime duration = avplayeritem.duration;
             NSLog(@"视频总时长:%.2f",CMTimeGetSeconds(duration));
-                
             self.videoDuration.text = [NSString stringWithFormat:@"视频总时长：%.2f",CMTimeGetSeconds(duration)];
-                
             // 播放
             [self.avPlayer play];
             
@@ -85,7 +85,6 @@
                 NSLog(@"视频准备发生错误");
                 NSError * error = avplayeritem.error;
                 NSLog(@"视频准备发生错误:%@",error);
-                
         }else{
                 
             NSLog(@"位置错误");
@@ -114,7 +113,6 @@
     float durationSeconds = CMTimeGetSeconds(timeRange.duration);
     
     NSLog(@"startSeconds= %f  durationSeconds = %f",startSeconds,durationSeconds);
-        
     // 计算总缓冲时间 = start + duration
     NSTimeInterval result = startSeconds + durationSeconds;
     return result;
@@ -126,7 +124,6 @@
     [self.avPlayerItem removeObserver:self forKeyPath:@"status"];
     [self.avPlayerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

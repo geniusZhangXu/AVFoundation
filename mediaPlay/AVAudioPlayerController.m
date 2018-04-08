@@ -146,7 +146,6 @@
     //
         
         AVAudioSession *session = [AVAudioSession sharedInstance];
-        
         NSError *sessionerror;
         if (![session setCategory:AVAudioSessionCategoryPlayback error:&sessionerror]) {
                 NSLog(@"Category Error: %@", [sessionerror localizedDescription]);
@@ -188,7 +187,6 @@
     
         if (_avAudioPlayer && fileError==nil) {
         
-            
             _avAudioPlayer.enableRate = YES;
             _avAudioPlayer.pan = 0;
             _avAudioPlayer.meteringEnabled = YES;

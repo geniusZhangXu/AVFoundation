@@ -10,8 +10,10 @@
 #import "mediaPlayController.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import <Foundation/Foundation.h>
 #import "AVAssetManager.h"
+
+#import "ForwardMessage.h"
 
 @interface ViewController ()
 
@@ -45,17 +47,17 @@
          */
         
         [self.AVAssetButton addTarget:self action:@selector(assetButtonClick) forControlEvents:UIControlEventTouchUpInside];
-        
-        
+
         //AVMediaSelectionGroup
         
         
         // 表示AVAsset中的备用媒体呈现方式，一个资源可能包含备用媒体呈现方式，比如音频、视频、或者文本轨道
-        //
-        
         //AVMediaSelectionOption
-        
         //AVAssetImageGenerator
+        
+        [[[ForwardMessage alloc]init]sayHello];
+        //[ForwardMessage sayGodbey];
+        
 }
 
 #pragma mark --
@@ -91,6 +93,5 @@
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.
 }
-
 
 @end

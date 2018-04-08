@@ -150,7 +150,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+        
     [self.startButton addTarget:self action:@selector(startCaptureWithSession) forControlEvents:UIControlEventTouchUpInside];
     
     /*
@@ -238,7 +238,7 @@
     
     /*
      用于展示制的画面
-    */
+     */
     self.captureVideoPreviewLayer = ({
         
         AVCaptureVideoPreviewLayer * preViewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
@@ -392,11 +392,10 @@
 #pragma mark -- 视频压缩方法
 -(void)compressVideoWithFileUrl:(NSURL *)fileUrl{
     
-    /* 
-     
+    /*
       这里需要注意的一点就是在重复的路径上保存文件是不行的，可以选择在点击开始的时候删除之前的
       也可以这样按照时间命名不同的文件保存
-      在后面的 AVAssetWriter 也要注意这一点
+      在后面的AVAssetWriter也要注意这一点
      */
     // 压缩后的视频的方法命名
     NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
@@ -434,7 +433,7 @@
     exportSession.outputFileType = AVFileTypeQuickTimeMovie;
     
     NSLog(@"视频压缩后的presetName: %@",exportSession.presetName);
-    // 压缩的方法
+    // 压缩的方法  export 导出  Asynchronously 异步
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         
         /*
@@ -474,7 +473,6 @@
 
 
 /*
- 
    上面是第一种视频录制的情况，AVCaptureSession + AVCaptureMovieFileOutput  在利用 AVAssetExportSession 压缩视频
    上面第一种方式的缺点就是视频压缩需要时间，压缩的速度比较慢，对用户的体验有一定的影响。
    还有第二种方式，利用AVCaptureSession + AVAssetWriter  这种方案

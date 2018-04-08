@@ -24,9 +24,14 @@
 		C2708CF21FD688C7007E3B61 /* mediaPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2708CF11FD688C7007E3B61 /* mediaPlayController.m */; };
 		C27D92EA1FF4CB6700E6F85D /* SpaceRefView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */; };
 		C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C286BFC3200E29AE00E77433 /* AVAssetManager.m */; };
+		C290FFE6204698F500805A1D /* AVPlayerViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C290FFE5204698F500805A1D /* AVPlayerViewControllerManager.m */; };
+		C29AD6ED20736F8800BD8AF4 /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = C29AD6EC20736F8800BD8AF4 /* UIViewController+Swizzling.m */; };
 		C2B889AC2015D5ED000BD49C /* hubblecast.m4v in Resources */ = {isa = PBXBuildFile; fileRef = C2B889AB2015D5ED000BD49C /* hubblecast.m4v */; };
 		C2B889B42015DE41000BD49C /* CMTimeReading.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B889B32015DE41000BD49C /* CMTimeReading.m */; };
 		C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */; };
+		C2BC3E83205623CF005E5BD1 /* AVCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BC3E82205623CF005E5BD1 /* AVCompositionViewController.m */; };
+		C2CF733C206CE3E90086A3E0 /* ForwardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CF733B206CE3E90086A3E0 /* ForwardMessage.m */; };
+		C2CF733F206CEEDC0086A3E0 /* RuntimeMethodHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CF733E206CEEDC0086A3E0 /* RuntimeMethodHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +83,22 @@
 		C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceRefView.m; sourceTree = "<group>"; };
 		C286BFC2200E29AE00E77433 /* AVAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAssetManager.h; sourceTree = "<group>"; };
 		C286BFC3200E29AE00E77433 /* AVAssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAssetManager.m; sourceTree = "<group>"; };
+		C290FFE4204698F500805A1D /* AVPlayerViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerViewControllerManager.h; sourceTree = "<group>"; };
+		C290FFE5204698F500805A1D /* AVPlayerViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerViewControllerManager.m; sourceTree = "<group>"; };
+		C29A8FED2044FEC100AA4F27 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C29AD6EB20736F8800BD8AF4 /* UIViewController+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzling.h"; sourceTree = "<group>"; };
+		C29AD6EC20736F8800BD8AF4 /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
 		C2B889AB2015D5ED000BD49C /* hubblecast.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = hubblecast.m4v; sourceTree = "<group>"; };
 		C2B889B22015DE41000BD49C /* CMTimeReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMTimeReading.h; sourceTree = "<group>"; };
 		C2B889B32015DE41000BD49C /* CMTimeReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeReading.m; sourceTree = "<group>"; };
 		C2B8F85A1FF3A8CA000EA477 /* AVAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAudioPlayerController.h; sourceTree = "<group>"; };
 		C2B8F85B1FF3A8CA000EA477 /* AVAudioPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAudioPlayerController.m; sourceTree = "<group>"; };
+		C2BC3E81205623CF005E5BD1 /* AVCompositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCompositionViewController.h; sourceTree = "<group>"; };
+		C2BC3E82205623CF005E5BD1 /* AVCompositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCompositionViewController.m; sourceTree = "<group>"; };
+		C2CF733A206CE3E90086A3E0 /* ForwardMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardMessage.h; sourceTree = "<group>"; };
+		C2CF733B206CE3E90086A3E0 /* ForwardMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardMessage.m; sourceTree = "<group>"; };
+		C2CF733D206CEEDC0086A3E0 /* RuntimeMethodHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeMethodHelper.h; sourceTree = "<group>"; };
+		C2CF733E206CEEDC0086A3E0 /* RuntimeMethodHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeMethodHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +130,7 @@
 		C248BF0E1FE93C9B005FDCB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C29A8FED2044FEC100AA4F27 /* AssetsLibrary.framework */,
 				C248BF0F1FE93C9B005FDCB4 /* Photos.framework */,
 			);
 			name = Frameworks;
@@ -143,6 +160,8 @@
 		C2708CB91FD6870A007E3B61 /* mediaPlay */ = {
 			isa = PBXGroup;
 			children = (
+				C2BC3E80205623AC005E5BD1 /* AVComposition */,
+				C290FFE3204698C700805A1D /* AVPlayerViewController */,
 				C2B889B12015DDF1000BD49C /* AVAsset */,
 				C2B889B02015DDE0000BD49C /* AudioRecoder */,
 				C2B889AF2015DD64000BD49C /* AudioPlayer */,
@@ -160,6 +179,7 @@
 				34EF7B151FFB381400C06E2D /* 薛之谦-像风一样.mp3 */,
 				C2B889AB2015D5ED000BD49C /* hubblecast.m4v */,
 				C2708CBA1FD6870A007E3B61 /* Supporting Files */,
+				C29AD6EE2073781C00BD8AF4 /* Runtime */,
 				C27D92E81FF4CB6700E6F85D /* SpaceRefView.h */,
 				C27D92E91FF4CB6700E6F85D /* SpaceRefView.m */,
 				C2B889B22015DE41000BD49C /* CMTimeReading.h */,
@@ -192,6 +212,28 @@
 				C2708CE41FD6870B007E3B61 /* Info.plist */,
 			);
 			path = mediaPlayUITests;
+			sourceTree = "<group>";
+		};
+		C290FFE3204698C700805A1D /* AVPlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C290FFE4204698F500805A1D /* AVPlayerViewControllerManager.h */,
+				C290FFE5204698F500805A1D /* AVPlayerViewControllerManager.m */,
+			);
+			name = AVPlayerViewController;
+			sourceTree = "<group>";
+		};
+		C29AD6EE2073781C00BD8AF4 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				C2CF733D206CEEDC0086A3E0 /* RuntimeMethodHelper.h */,
+				C2CF733E206CEEDC0086A3E0 /* RuntimeMethodHelper.m */,
+				C2CF733A206CE3E90086A3E0 /* ForwardMessage.h */,
+				C2CF733B206CE3E90086A3E0 /* ForwardMessage.m */,
+				C29AD6EB20736F8800BD8AF4 /* UIViewController+Swizzling.h */,
+				C29AD6EC20736F8800BD8AF4 /* UIViewController+Swizzling.m */,
+			);
+			name = Runtime;
 			sourceTree = "<group>";
 		};
 		C2B889AD2015DD28000BD49C /* VideoPlayer */ = {
@@ -239,6 +281,15 @@
 				C286BFC3200E29AE00E77433 /* AVAssetManager.m */,
 			);
 			name = AVAsset;
+			sourceTree = "<group>";
+		};
+		C2BC3E80205623AC005E5BD1 /* AVComposition */ = {
+			isa = PBXGroup;
+			children = (
+				C2BC3E81205623CF005E5BD1 /* AVCompositionViewController.h */,
+				C2BC3E82205623CF005E5BD1 /* AVCompositionViewController.m */,
+			);
+			name = AVComposition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,15 +430,20 @@
 			files = (
 				C2708CC81FD6870B007E3B61 /* mediaPlay.xcdatamodeld in Sources */,
 				34EF7B191FFB845F00C06E2D /* AVAudioRecorderController.m in Sources */,
+				C290FFE6204698F500805A1D /* AVPlayerViewControllerManager.m in Sources */,
 				34ED4D701FDF709400756984 /* LittleVideoController.m in Sources */,
 				C2708CC21FD6870A007E3B61 /* ViewController.m in Sources */,
+				C2CF733F206CEEDC0086A3E0 /* RuntimeMethodHelper.m in Sources */,
 				C2708CF21FD688C7007E3B61 /* mediaPlayController.m in Sources */,
 				C27D92EA1FF4CB6700E6F85D /* SpaceRefView.m in Sources */,
 				C2708CBF1FD6870A007E3B61 /* AppDelegate.m in Sources */,
 				C2B889B42015DE41000BD49C /* CMTimeReading.m in Sources */,
+				C2CF733C206CE3E90086A3E0 /* ForwardMessage.m in Sources */,
 				C2305C511FE263F30095B2DC /* WriteController.m in Sources */,
 				C2B8F85C1FF3A8CA000EA477 /* AVAudioPlayerController.m in Sources */,
 				C286BFC4200E29AE00E77433 /* AVAssetManager.m in Sources */,
+				C29AD6ED20736F8800BD8AF4 /* UIViewController+Swizzling.m in Sources */,
+				C2BC3E83205623CF005E5BD1 /* AVCompositionViewController.m in Sources */,
 				C2708CBC1FD6870A007E3B61 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

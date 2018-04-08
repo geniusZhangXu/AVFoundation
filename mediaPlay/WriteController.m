@@ -51,6 +51,7 @@
 #import <Photos/PHCollection.h>
 #import <Photos/PHAssetCollectionChangeRequest.h>
 
+
 static NSString *const AssetCollectionName = @"录制视频";
 
 static void * CAPTURE_SESSION_QUEUE_VIDEO;
@@ -84,10 +85,10 @@ static void * CAPTURE_SESSION_QUEUE_ASSET_WRITER;
 @property (nonatomic, assign) BOOL canWrite;
 
 /*
- __attribute__ 简单介绍
+ __attribute__ 简单介绍(属性)
  __attribute__ 是GNU C的特色之一，在iOS中也有广泛的应用，系统中也有许多用到的地方。attribute可以设置函数属性（Function Attribute ）、变量属性（Variable Attribute ）和类型属性（Type Attribute)等.
  
- CMFormatDescriptionRef 不是非OC对象，在前面加上__attribute__((NSObject))后，outputVideoFormatDescription的内存管理就会被当做OC的对象来管理。
+ CMFormatDescriptionRef 是非OC对象，在前面加上__attribute__((NSObject))后，outputVideoFormatDescription的内存管理就会被当做OC的对象来管理。
  */
 @property(nonatomic,retain) __attribute__((NSObject)) CMFormatDescriptionRef outputVideoFormatDescription;
 @property(nonatomic,retain) __attribute__((NSObject)) CMFormatDescriptionRef outputAudioFormatDescription;
@@ -130,13 +131,11 @@ static void * CAPTURE_SESSION_QUEUE_ASSET_WRITER;
                 
             [[NSFileManager defaultManager] removeItemAtURL:[NSURL fileURLWithPath:self.dataDirectory] error:NULL];
         }
-        
+        //
         [self.captureSession startRunning];
         /*初始化 AVAssetWriterInput */
         [self initAssetWriterInputAndOutput];
         [self startRuningWithSession];
-
-     
 }
 
 #pragma mark --
@@ -595,7 +594,10 @@ static void * CAPTURE_SESSION_QUEUE_ASSET_WRITER;
  */
 
 -(void)saveVideoWithFilePath:(NSString *)filepath{
+        
 
+        
+        
         PHPhotoLibrary * library =[PHPhotoLibrary sharedPhotoLibrary];
         dispatch_async(dispatch_get_main_queue(), ^{
            
@@ -681,10 +683,8 @@ static void * CAPTURE_SESSION_QUEUE_ASSET_WRITER;
                         mediaPlayC.MovieURL = [NSURL fileURLWithPath:self.dataDirectory];
                         //private/var/mobile/Containers/Data/Application/0805DDA5-C4C7-4248-A8CC-2A37F90B93DF/tmp//2017-12-19-18:02:37.mov
                 }else{
-                
                         NSLog(@"文件不存在");
                 }
-                
         }
 }
 

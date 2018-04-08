@@ -167,9 +167,9 @@
         }
 }
 
-
+#pragma mark --
+#pragma mark -- CMTime的简单的使用
 -(void)CMTimeCalculate{
-        
         
         CMTime timeO = CMTimeMake(1,10);
         CMTime timeT = CMTimeMake(1,5);
@@ -198,9 +198,9 @@
         //求绝对值
         CMTime timeAB = CMTimeAbsoluteValue(timeS);
         CMTimeShow(timeAB);
-        
-        
 }
+
+
 
 
 @end

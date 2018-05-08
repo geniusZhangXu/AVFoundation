@@ -101,6 +101,16 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUW-F4-for">
+                                <rect key="frame" x="132" y="531" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SessionManager"/>
+                                <connections>
+                                    <segue destination="Nvs-ia-Lpn" kind="popoverPresentation" popoverAnchorView="pUW-F4-for" id="qtS-kp-MB4">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -232,6 +242,35 @@
                 <exit id="Lfx-He-vNz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="944.79999999999995" y="1029.5352323838081"/>
+        </scene>
+        <!--URL Session Controller-->
+        <scene sceneID="Ur1-tc-hed">
+            <objects>
+                <viewController id="Nvs-ia-Lpn" customClass="URLSessionController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W0x-8m-JN8"/>
+                        <viewControllerLayoutGuide type="bottom" id="i5g-4y-I6g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fI1-Eb-mxh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-xM-Mcl">
+                                <rect key="frame" x="172" y="598" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="返回"/>
+                                <connections>
+                                    <segue destination="JIE-zz-ZoH" kind="unwind" unwindAction="unwindSegue:" id="7bl-Y6-GCt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7G-RG-dq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JIE-zz-ZoH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="1705"/>
         </scene>
         <!--Audio Recorder Controller-->
         <scene sceneID="xfz-vY-lm8">
@@ -434,7 +473,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cEP-6d-SZ1"/>
+        <segue reference="E0v-VC-cAm"/>
         <segue reference="bc0-Q7-FTV"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

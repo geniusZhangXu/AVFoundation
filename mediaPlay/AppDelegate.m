@@ -8,9 +8,13 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import "URLSessionManager.h"
 
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
+
+@property URLSessionManager * sessionManager;
 
 @end
 
@@ -19,13 +23,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         // Override point for customization after application launch.
+      
+        // ios10后，使用
+        UNUserNotificationCenter * notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+        notificationCenter.delegate = self;
+        [notificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionBadge|UNAuthorizationOptionSound|UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                
+        }];
 
+        [notificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+           
+                DBLong(settings);
+        }];
         //AVAsset
         return YES;
 }
 
+//在应用处于后台，且后台任务下载完成时回调
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler{
+
+        URLSessionManager * sessionManager = [URLSessionManager shareURLSessionManager];
+        NSURLSession * session = [sessionManager downLoadSession];
+        
+        DBLong("重新获取到的session  = %@ ；identifier =%@ ", session,identifier);
+        // 保存 completion handler 以在处理 session 事件后更新 UI
+        [sessionManager addCompletionHandler:completionHandler forSession:identifier];
+}
+
+
+#pragma mark - Local Notification
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+        
+        
+}
+
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+        
+        DBLong("你收到了推送消息");
+        
+        
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+        
+        application.applicationIconBadgeNumber -= 1;
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }

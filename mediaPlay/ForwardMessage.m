@@ -52,8 +52,8 @@ Class functionForSayGodbey(id self, SEL _cmd){
 
 /*
  这个方法处理的是实例方法
+ resolve  解决 美  [rɪ'zɑlv]
  */
-
 +(BOOL)resolveInstanceMethod:(SEL)sel{
 
         NSLog(@"resolveInstanceMethod");
@@ -148,12 +148,8 @@ Class functionForSayGodbey(id self, SEL _cmd){
 -(void)sayHello{
         
         NSLog(@"你好、这荒唐的世界");
-        
         [self understandRuntime];
 }
-
-
-
 
 #pragma mark --
 #pragma mark -- 理解一下Runtime
@@ -190,15 +186,11 @@ Class functionForSayGodbey(id self, SEL _cmd){
                 NSLog(@"没有读取到变量");
         }
         
-        
         NSLog(@"object_isClass %d",object_isClass(object));
         NSLog(@"object_isClass %d",object_isClass(self));
         
         const char * className = object_getClassName(self);
         NSLog(@"className %@",[NSString stringWithUTF8String:className]);
-
-       
-        
 }
 
 

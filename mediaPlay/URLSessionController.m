@@ -32,13 +32,13 @@
         [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button1 setBackgroundColor:[UIColor grayColor]];
         [button1 addTarget:self action:@selector(StartDownload) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button1];
         [button1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 
-                make.top.equalTo(self.view).with.offset(100);
+                make.top.equalTo(self.view).with.offset(200);
                 make.centerX.equalTo(self.view);
-                make.size.equalTo(self.view).sizeOffset(CGSizeMake(100, 50));
+                make.size.mas_equalTo(CGSizeMake(100, 50));
         }];
-        [self.view addSubview:button1];
         
         
         
@@ -47,27 +47,28 @@
         [button2 setBackgroundColor:[UIColor grayColor]];
         [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button2 addTarget:self action:@selector(PauseDownload) forControlEvents:UIControlEventTouchUpInside];
-        [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
-           
-                make.top.equalTo(button1).offset(20);
-                make.centerX.equalTo(button1);
-                make.size.equalTo(self.view).sizeOffset(CGSizeMake(100, 50));
-        }];
         [self.view addSubview:button2];
+        [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
+
+                make.top.equalTo(button1.mas_bottom).offset(20);
+                make.centerX.equalTo(button1);
+                make.size.mas_equalTo(CGSizeMake(100, 50));
+        }];
+       
 
         
         UIButton * button3 = [UIButton buttonWithType:UIButtonTypeCustom];
         [button3 setBackgroundColor:[UIColor grayColor]];
-        [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
-                
-                make.top.equalTo(button2).offset(20);
-                make.centerX.equalTo(button2);
-                make.size.equalTo(self.view).sizeOffset(CGSizeMake(100, 50));
-        }];
         [button3 setTitle:@"恢复下载"  forState:UIControlStateNormal];
         [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button3 addTarget:self action:@selector(ResumeDownload) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button3];
+        [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
+
+                make.top.equalTo(button2.mas_bottom).offset(20);
+                make.centerX.equalTo(button2);
+                make.size.mas_equalTo(CGSizeMake(100, 50));
+        }];
         
 }
 

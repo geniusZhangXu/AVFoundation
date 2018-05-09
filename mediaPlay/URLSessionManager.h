@@ -973,6 +973,7 @@ Sent periodically to notify the delegate of download progress.
  */
 
 
+
 /*
    presents 礼物复数  表现
  * Represents 代表 the transaction request.
@@ -1096,34 +1097,29 @@ Sent periodically to notify the delegate of download progress.
 
 /* 如果使用代理连接来获取资源，则此属性设置为YES。
  * This property is set to YES if a proxy connection was used to fetch the resource.
- 
    @property (assign, readonly, getter=isProxyConnection) BOOL proxyConnection;
  */
 
 
 /* 如果使用持续连接来获取资源，则此属性设置为YES
  * This property is set to YES if a persistent connection was used to fetch the resource.
- 
-   @property (assign, readonly, getter=isReusedConnection) BOOL reusedConnection;
+    @property (assign, readonly, getter=isReusedConnection) BOOL reusedConnection;
  */
 
 
 /* 指示资源是否已从本地缓存中加载，推送或检索。
  * Indicates whether the resource was loaded, pushed or retrieved from the local cache.
- 
    @property (assign, readonly) NSURLSessionTaskMetricsResourceFetchType resourceFetchType;
  */
 
 // -(instancetype)init;
-
-
 
 /* API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
    @interface NSURLSessionTaskMetrics : NSObject
  */
 
 /* 包含为在任务执行期间创建的每个请求/响应事务收集的度量标准。
- * transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
+   transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
    @property (copy, readonly) NSArray<NSURLSessionTaskTransactionMetrics *> *transactionMetrics;
  */
 
@@ -1133,7 +1129,6 @@ Sent periodically to notify the delegate of download progress.
  * Task completion time is the time when the task is about to change its internal state to completed.
  
    @property (copy, readonly) NSDateInterval *taskInterval;
-
  */
 
 /* 记录的重定向的数量。
